@@ -1,0 +1,25 @@
+{
+  "method": "FastAPI TestClient in-process; network listener not required or tested",
+  "request": {
+    "date_time": "2018-06-18T08:00:00",
+    "weather_main": "Clear",
+    "temp": 288.15,
+    "rain_1h": 0,
+    "snow_1h": 0,
+    "clouds_all": 20,
+    "is_holiday": false
+  },
+  "response": {
+    "predicted_vehicles_per_hour": 5928.45997434053,
+    "proxy_positive_score_uncalibrated": 0.019547202427122122,
+    "proxy_label_at_validation_threshold": 0,
+    "threshold": 0.4991858223219664,
+    "regression_version": "forest_reg_v2",
+    "classification_version": "forest_cls_v2",
+    "actual_accident_prediction": false,
+    "limitations": "Observed-condition volume estimate and deterministic assignment proxy; not a safety or travel-time guarantee."
+  },
+  "status_code": 200,
+  "invalid_date_status": 422,
+  "forbidden_target_status": 422
+}

@@ -1,0 +1,8 @@
+{
+  "explained_model": "forest_reg_v2",
+  "deep_model": "neural_v3",
+  "test_agreement_r2_neural_as_reference": 0.9559407585040811,
+  "mean_absolute_prediction_disagreement": 286.5286021528629,
+  "shap_sample_hours": 150,
+  "scope": "Comparable model for same demand task and features, not direct neural explanation or causal attribution."
+}

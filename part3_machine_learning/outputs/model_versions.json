@@ -1,0 +1,52 @@
+[
+  {
+    "model_id": "ridge_v1",
+    "task": "regression",
+    "registry": "TrafficVolume",
+    "version": 4,
+    "run_id": "490880b4ed9c47ce8da6eb875243ee21",
+    "artifact": "models/ridge_v1.joblib",
+    "threshold": null,
+    "training_seconds": 0.018870486000082565
+  },
+  {
+    "model_id": "forest_reg_v2",
+    "task": "regression",
+    "registry": "TrafficVolume",
+    "version": 5,
+    "run_id": "16dd6484f6d44235aa0122c067101d2f",
+    "artifact": "models/forest_reg_v2.joblib",
+    "threshold": null,
+    "training_seconds": 3.0607291670000905
+  },
+  {
+    "model_id": "logistic_v1",
+    "task": "classification",
+    "registry": "ProxyRisk",
+    "version": 3,
+    "run_id": "76124ebfe9624bae9d1bd9373ed61f6d",
+    "artifact": "models/logistic_v1.joblib",
+    "threshold": 0.8173262620736214,
+    "training_seconds": 0.04763956399995095
+  },
+  {
+    "model_id": "forest_cls_v2",
+    "task": "classification",
+    "registry": "ProxyRisk",
+    "version": 4,
+    "run_id": "2343bd53519141f59b64ef6dcb0a653c",
+    "artifact": "models/forest_cls_v2.joblib",
+    "threshold": 0.4991858223219664,
+    "training_seconds": 0.9571427719999974
+  },
+  {
+    "model_id": "neural_v3",
+    "task": "regression",
+    "registry": "TrafficVolume",
+    "version": 6,
+    "run_id": "cb82a3b87e7e44b6a056f988987473a4",
+    "artifact": "models/neural_v3.joblib",
+    "threshold": null,
+    "training_seconds": 1.3404367750000574
+  }
+]

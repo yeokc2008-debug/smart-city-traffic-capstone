@@ -1,0 +1,44 @@
+{
+  "thresholds": {
+    "feature_psi": 0.2,
+    "error_mae_ratio": 1.25
+  },
+  "baseline_self_comparison": {
+    "status": "PASS",
+    "psi": {
+      "temp_c": 0.0,
+      "clouds_all": 0.0,
+      "hour": 0.0
+    },
+    "reference_mae": 239.27039103617776,
+    "current_mae": 239.27039103617776,
+    "reasons": []
+  },
+  "observed_2018_test": {
+    "status": "PASS",
+    "psi": {
+      "temp_c": 0.1780502426407056,
+      "clouds_all": 0.032357787357477685,
+      "hour": 1.776584447462394e-05
+    },
+    "reference_mae": 239.27039103617776,
+    "current_mae": 229.80521795910258,
+    "reasons": []
+  },
+  "synthetic_stress": {
+    "status": "ALERT",
+    "psi": {
+      "temp_c": 1.3564040612027606,
+      "clouds_all": 0.032357787357477685,
+      "hour": 1.776584447462394e-05
+    },
+    "reference_mae": 239.27039103617776,
+    "current_mae": 1990.1786140659424,
+    "reasons": [
+      "temp_c PSI=1.356 exceeds 0.20",
+      "MAE exceeds 1.25 times validation reference"
+    ]
+  },
+  "stress_definition": "Add 15 Celsius to feature values and 2000 vehicles/hour to predictions; synthetic diagnostics, not observed production.",
+  "interpretation": "Heuristic thresholds fixed before monitoring. Seasonal coverage differences can trigger feature drift; labels are needed for delayed error monitoring. PASS does not certify safety."
+}

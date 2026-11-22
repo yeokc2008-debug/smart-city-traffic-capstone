@@ -1,0 +1,33 @@
+{
+  "feature_columns": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "is_holiday",
+    "temp_c",
+    "rain_1h",
+    "snow_1h",
+    "clouds_all",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos",
+    "weather_squall",
+    "weather_thunderstorm",
+    "weather_snow",
+    "weather_rain",
+    "weather_drizzle",
+    "weather_fog",
+    "weather_mist",
+    "weather_haze",
+    "weather_smoke",
+    "weather_clouds",
+    "weather_clear",
+    "weather_unknown",
+    "is_low_visibility",
+    "is_severe_weather"
+  ],
+  "label": "documented proxy; not actual accidents"
+}

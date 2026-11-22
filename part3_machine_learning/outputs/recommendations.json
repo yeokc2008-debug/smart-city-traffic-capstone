@@ -1,0 +1,110 @@
+[
+  {
+    "recommendation": "For the weekday journey on 2018-06-18, consider 10:00\u201311:00 within your permitted window. Historical support averages 4,458 vehicles/hour (n=211); the demand model estimates 4,389. Weather scenario: Clear; other weather inputs use historical medians. This ranks travel timing on one corridor, not alternative routes; lower volume does not guarantee less delay or safer travel.",
+    "date": "2018-06-18",
+    "weather": "Clear",
+    "day_type": "Weekday",
+    "holiday_assumption": false,
+    "ranking": "equal-weight historical mean and selected model prediction",
+    "candidates": [
+      {
+        "hour": 10,
+        "historical_mean": 4458.094786729858,
+        "n": 211,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 4388.734492865956,
+        "ranking_score": 4423.4146397979075
+      },
+      {
+        "hour": 11,
+        "historical_mean": 4730.397196261682,
+        "n": 214,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 4584.922192667375,
+        "ranking_score": 4657.659694464529
+      },
+      {
+        "hour": 9,
+        "historical_mean": 4954.25,
+        "n": 204,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 4909.267905344252,
+        "ranking_score": 4931.758952672126
+      },
+      {
+        "hour": 8,
+        "historical_mean": 5550.202127659574,
+        "n": 188,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 5938.974141422487,
+        "ranking_score": 5744.588134541031
+      },
+      {
+        "hour": 7,
+        "historical_mean": 5997.746031746032,
+        "n": 189,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 6566.379613499336,
+        "ranking_score": 6282.062822622684
+      }
+    ]
+  },
+  {
+    "recommendation": "For the weekend journey on 2018-06-23, consider 09:00\u201310:00 within your permitted window. Historical support averages 2,980 vehicles/hour (n=22); the demand model estimates 3,549. Weather scenario: Snow; other weather inputs use historical medians. This ranks travel timing on one corridor, not alternative routes; lower volume does not guarantee less delay or safer travel. Severe/low-visibility weather is present; this is not a safety endorsement.",
+    "date": "2018-06-23",
+    "weather": "Snow",
+    "day_type": "Weekend",
+    "holiday_assumption": false,
+    "ranking": "equal-weight historical mean and selected model prediction",
+    "candidates": [
+      {
+        "hour": 9,
+        "historical_mean": 2980.2727272727275,
+        "n": 22,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 3548.912978163993,
+        "ranking_score": 3264.5928527183605
+      },
+      {
+        "hour": 10,
+        "historical_mean": 3456.1739130434785,
+        "n": 23,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 3982.910572679433,
+        "ranking_score": 3719.5422428614556
+      },
+      {
+        "hour": 11,
+        "historical_mean": 3878.7619047619046,
+        "n": 21,
+        "support_scope": "day type, hour and weather",
+        "model_prediction": 4490.675527202335,
+        "ranking_score": 4184.71871598212
+      },
+      {
+        "hour": 13,
+        "historical_mean": 4336.3790849673205,
+        "n": 306,
+        "support_scope": "day type and hour fallback",
+        "model_prediction": 4462.222614411279,
+        "ranking_score": 4399.3008496893
+      },
+      {
+        "hour": 12,
+        "historical_mean": 4321.691029900332,
+        "n": 301,
+        "support_scope": "day type and hour fallback",
+        "model_prediction": 4530.824278755762,
+        "ranking_score": 4426.257654328047
+      },
+      {
+        "hour": 14,
+        "historical_mean": 4313.378737541529,
+        "n": 301,
+        "support_scope": "day type and hour fallback",
+        "model_prediction": 4636.1303901498295,
+        "ranking_score": 4474.7545638456795
+      }
+    ]
+  }
+]

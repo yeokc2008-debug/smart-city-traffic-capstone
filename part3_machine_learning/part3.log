@@ -1,0 +1,147 @@
+2026-10-29 13:20:49,656 | INFO | data_features | Raw data loaded 48204 x 9
+2026-10-29 13:20:49,656 | INFO | part2_cleaning | Schema validated: all 9 expected columns present
+2026-10-29 13:20:49,696 | INFO | part2_cleaning | 0 rows affected: standardise holiday
+2026-10-29 13:20:49,727 | INFO | part2_cleaning | 0 rows affected: standardise weather_main
+2026-10-29 13:20:49,766 | WARNING | part2_cleaning | 1730 rows affected: standardise weather_description
+2026-10-29 13:20:49,775 | INFO | part2_cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-29 13:20:49,795 | WARNING | part2_cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-29 13:20:49,802 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-29 13:20:49,802 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-29 13:20:49,803 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-29 13:20:49,803 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-29 13:20:49,803 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-29 13:20:49,804 | INFO | part2_cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-29 13:20:49,811 | WARNING | part2_cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-29 13:20:49,818 | WARNING | part2_cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-29 13:20:49,820 | WARNING | part2_cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-29 13:20:49,838 | WARNING | part2_cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:20:49,854 | WARNING | part2_cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-29 13:20:49,862 | INFO | part2_cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:20:49,888 | INFO | part2_cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-29 13:20:49,924 | WARNING | part2_cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-29 13:20:49,943 | WARNING | part2_cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-10-29 13:20:49,954 | INFO | part2_cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-29 13:20:50,210 | INFO | data_features | Prepared 40575 observed hours; proxy positives 3133; feature count 28
+2026-10-29 13:20:52,919 | INFO | modeling | Trained ridge_v1 in 0.02s; validation={'mae': 797.4213605891493, 'r2': 0.7328255267107673}; test={'mae': 799.3111949586272, 'r2': 0.7380582016009234}
+2026-10-29 13:20:56,662 | INFO | modeling | Trained forest_reg_v2 in 3.11s; validation={'mae': 239.27039103617776, 'r2': 0.96242943119215}; test={'mae': 229.80521795910263, 'r2': 0.9610102478657967}
+2026-10-29 13:20:56,785 | INFO | modeling | Trained logistic_v1 in 0.04s; validation={'accuracy': 0.9872604154711351, 'precision': 0.8986568986568987, 'recall': 0.9633507853403142, 'f1': 0.9298799747315224, 'roc_auc': 0.9975486725255706, 'pr_auc_average_precision': 0.9728688774882099}; test={'accuracy': 0.9787234042553191, 'precision': 0.829232995658466, 'recall': 0.9646464646464646, 'f1': 0.8918287937743191, 'roc_auc': 0.9938720425334333, 'pr_auc_average_precision': 0.9230921697301316}
+2026-10-29 13:20:57,835 | INFO | modeling | Trained forest_cls_v2 in 0.88s; validation={'accuracy': 0.9941466773786296, 'precision': 0.9495586380832283, 'recall': 0.9856020942408377, 'f1': 0.9672447013487476, 'roc_auc': 0.9990747626063801, 'pr_auc_average_precision': 0.9866687797348486}; test={'accuracy': 0.9848461656206949, 'precision': 0.8634361233480177, 'recall': 0.98989898989899, 'f1': 0.9223529411764706, 'roc_auc': 0.9966916739942502, 'pr_auc_average_precision': 0.9488181904525443}
+2026-10-29 13:20:59,066 | INFO | modeling | Neural network finished 24 epochs; retained epoch 12
+2026-10-29 13:20:59,125 | INFO | modeling | Trained neural_v3 in 1.23s; validation={'mae': 377.3400945197057, 'r2': 0.9292540871655874}; test={'mae': 349.9552074678183, 'r2': 0.9350975728179128}
+2026-10-29 13:20:59,230 | INFO | modeling | Selected regression=forest_reg_v2 and classification=forest_cls_v2 using validation only
+2026-10-29 13:23:00,695 | INFO | data_features | Raw data loaded 48204 x 9
+2026-10-29 13:23:00,695 | INFO | part2_cleaning | Schema validated: all 9 expected columns present
+2026-10-29 13:23:00,748 | INFO | part2_cleaning | 0 rows affected: standardise holiday
+2026-10-29 13:23:00,791 | INFO | part2_cleaning | 0 rows affected: standardise weather_main
+2026-10-29 13:23:00,849 | WARNING | part2_cleaning | 1730 rows affected: standardise weather_description
+2026-10-29 13:23:00,862 | INFO | part2_cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-29 13:23:00,883 | WARNING | part2_cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-29 13:23:00,888 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-29 13:23:00,889 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-29 13:23:00,889 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-29 13:23:00,889 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-29 13:23:00,890 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-29 13:23:00,891 | INFO | part2_cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-29 13:23:00,898 | WARNING | part2_cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-29 13:23:00,907 | WARNING | part2_cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-29 13:23:00,909 | WARNING | part2_cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-29 13:23:00,930 | WARNING | part2_cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:23:00,952 | WARNING | part2_cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-29 13:23:00,965 | INFO | part2_cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:23:00,998 | INFO | part2_cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-29 13:23:01,042 | WARNING | part2_cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-29 13:23:01,061 | WARNING | part2_cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-10-29 13:23:01,070 | INFO | part2_cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-29 13:23:01,343 | INFO | data_features | Prepared 40575 observed hours; proxy positives 3133; feature count 28
+2026-10-29 13:23:01,527 | INFO | __main__ | Loaded existing trained models; training skipped explicitly
+2026-10-29 13:23:01,654 | INFO | unsupervised | K-means k=3 silhouette=0.3818
+2026-10-29 13:23:01,743 | INFO | unsupervised | K-means k=4 silhouette=0.3642
+2026-10-29 13:23:01,837 | INFO | unsupervised | K-means k=5 silhouette=0.3925
+2026-10-29 13:23:02,195 | INFO | unsupervised | Mined 127 supported rules; sorted by TRAINING lift; holdout metrics diagnostic only
+2026-10-29 13:23:15,250 | INFO | explainability | Tree SHAP saved for 150 test observations; RF/neural MAE disagreement 286.53
+2026-10-29 13:23:15,361 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/01_regression_errors.png
+2026-10-29 13:23:15,490 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/02_precision_recall.png
+2026-10-29 13:23:15,685 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/03_confusion_matrix.png
+2026-10-29 13:23:15,791 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/04_neural_history.png
+2026-10-29 13:23:15,988 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/05_traffic_clusters.png
+2026-10-29 13:23:16,251 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-10-29 13:23:16,469 | WARNING | recommendation | Recommendation hour 12: sparse weather sample; use 301 day-type observations
+2026-10-29 13:23:16,475 | WARNING | recommendation | Recommendation hour 13: sparse weather sample; use 306 day-type observations
+2026-10-29 13:23:16,479 | WARNING | recommendation | Recommendation hour 14: sparse weather sample; use 301 day-type observations
+2026-10-29 13:23:16,512 | INFO | recommendation | Recommendation generated for date=2018-06-23 weather=Snow window=9–15
+2026-10-29 13:23:16,714 | INFO | api | Serving mock loaded selected model versions forest_reg_v2 forest_cls_v2
+2026-10-29 13:23:16,768 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-10-29 13:23:16,770 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-10-29 13:23:16,772 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:23:16,774 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:23:16,774 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-10-29 13:23:16,910 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:23:16,915 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:23:16,920 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
+2026-10-29 13:23:16,920 | INFO | __main__ | All seven task workflows completed
+2026-10-29 13:25:56,439 | INFO | data_features | Raw data loaded 48204 x 9
+2026-10-29 13:25:56,440 | INFO | part2_cleaning | Schema validated: all 9 expected columns present
+2026-10-29 13:25:56,478 | INFO | part2_cleaning | 0 rows affected: standardise holiday
+2026-10-29 13:25:56,508 | INFO | part2_cleaning | 0 rows affected: standardise weather_main
+2026-10-29 13:25:56,550 | WARNING | part2_cleaning | 1730 rows affected: standardise weather_description
+2026-10-29 13:25:56,560 | INFO | part2_cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-29 13:25:56,578 | WARNING | part2_cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-29 13:25:56,582 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-29 13:25:56,583 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-29 13:25:56,583 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-29 13:25:56,584 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-29 13:25:56,584 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-29 13:25:56,585 | INFO | part2_cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-29 13:25:56,596 | WARNING | part2_cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-29 13:25:56,605 | WARNING | part2_cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-29 13:25:56,607 | WARNING | part2_cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-29 13:25:56,624 | WARNING | part2_cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:25:56,643 | WARNING | part2_cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-29 13:25:56,651 | INFO | part2_cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:25:56,676 | INFO | part2_cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-29 13:25:56,710 | WARNING | part2_cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-29 13:25:56,726 | WARNING | part2_cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-10-29 13:25:56,739 | INFO | part2_cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-29 13:25:57,012 | INFO | data_features | Prepared 40575 observed hours; proxy positives 3133; feature count 28
+2026-10-29 13:25:58,525 | INFO | modeling | Trained ridge_v1 in 0.02s; validation={'mae': 797.4213605891493, 'r2': 0.7328255267107673}; test={'mae': 799.3111949586272, 'r2': 0.7380582016009234}
+2026-10-29 13:26:02,206 | INFO | modeling | Trained forest_reg_v2 in 3.06s; validation={'mae': 239.27039103617776, 'r2': 0.96242943119215}; test={'mae': 229.80521795910263, 'r2': 0.9610102478657967}
+2026-10-29 13:26:02,337 | INFO | modeling | Trained logistic_v1 in 0.05s; validation={'accuracy': 0.9872604154711351, 'precision': 0.8986568986568987, 'recall': 0.9633507853403142, 'f1': 0.9298799747315224, 'roc_auc': 0.9975486725255706, 'pr_auc_average_precision': 0.9728688774882099}; test={'accuracy': 0.9787234042553191, 'precision': 0.829232995658466, 'recall': 0.9646464646464646, 'f1': 0.8918287937743191, 'roc_auc': 0.9938720425334333, 'pr_auc_average_precision': 0.9230921697301316}
+2026-10-29 13:26:03,483 | INFO | modeling | Trained forest_cls_v2 in 0.96s; validation={'accuracy': 0.9941466773786296, 'precision': 0.9495586380832283, 'recall': 0.9856020942408377, 'f1': 0.9672447013487476, 'roc_auc': 0.9990747626063801, 'pr_auc_average_precision': 0.9866687797348486}; test={'accuracy': 0.9848461656206949, 'precision': 0.8634361233480177, 'recall': 0.98989898989899, 'f1': 0.9223529411764706, 'roc_auc': 0.9966916739942502, 'pr_auc_average_precision': 0.9488181904525443}
+2026-10-29 13:26:04,822 | INFO | modeling | Neural network finished 24 epochs; retained epoch 12
+2026-10-29 13:26:04,901 | INFO | modeling | Trained neural_v3 in 1.34s; validation={'mae': 377.3400945197057, 'r2': 0.9292540871655874}; test={'mae': 349.9552074678183, 'r2': 0.9350975728179128}
+2026-10-29 13:26:05,037 | INFO | modeling | Selected regression=forest_reg_v2 and classification=forest_cls_v2 using validation only
+2026-10-29 13:26:05,149 | INFO | unsupervised | K-means k=3 silhouette=0.3818
+2026-10-29 13:26:05,240 | INFO | unsupervised | K-means k=4 silhouette=0.3642
+2026-10-29 13:26:05,371 | INFO | unsupervised | K-means k=5 silhouette=0.3925
+2026-10-29 13:26:05,741 | INFO | unsupervised | Mined 127 supported rules; sorted by TRAINING lift; holdout metrics diagnostic only
+2026-10-29 13:26:18,400 | INFO | explainability | Tree SHAP saved for 150 test observations; RF/neural MAE disagreement 286.53
+2026-10-29 13:26:18,481 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/01_regression_errors.png
+2026-10-29 13:26:18,581 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/02_precision_recall.png
+2026-10-29 13:26:18,630 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/03_confusion_matrix.png
+2026-10-29 13:26:18,711 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/04_neural_history.png
+2026-10-29 13:26:18,865 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/05_traffic_clusters.png
+2026-10-29 13:26:19,095 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-10-29 13:26:19,270 | WARNING | recommendation | Recommendation hour 12: sparse weather sample; use 301 day-type observations
+2026-10-29 13:26:19,274 | WARNING | recommendation | Recommendation hour 13: sparse weather sample; use 306 day-type observations
+2026-10-29 13:26:19,279 | WARNING | recommendation | Recommendation hour 14: sparse weather sample; use 301 day-type observations
+2026-10-29 13:26:19,310 | INFO | recommendation | Recommendation generated for date=2018-06-23 weather=Snow window=9–15
+2026-10-29 13:26:19,491 | INFO | api | Serving mock loaded selected model versions forest_reg_v2 forest_cls_v2
+2026-10-29 13:26:19,547 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-10-29 13:26:19,548 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-10-29 13:26:19,550 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:26:19,552 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:26:19,552 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-10-29 13:26:19,665 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:26:19,668 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:26:19,672 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
+2026-10-29 13:26:19,673 | INFO | __main__ | All seven task workflows completed
+2026-11-22 14:33:50,661 | ERROR | __main__ | Part 3 failed: No module named 'shap'
+Traceback (most recent call last):
+  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/run_all.py", line 41, in main
+    try:run(a.reuse_models);return 0
+        ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/run_all.py", line 15, in run
+    from explainability import explain_demand
+  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/explainability.py", line 8, in <module>
+    import shap
+ModuleNotFoundError: No module named 'shap'

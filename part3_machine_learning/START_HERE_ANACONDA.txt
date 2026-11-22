@@ -1,0 +1,13 @@
+CAPSTONE PART 3 — ANACONDA / JUPYTER
+
+1. Extract ALL files to a folder.
+2. Open Anaconda Prompt and change to the folder containing Capstone_Part3.ipynb.
+3. Run: conda env create -f environment.yml
+4. Run: conda activate capstone_part3
+5. Run: python -m jupyterlab Capstone_Part3.ipynb
+6. Select the Python kernel and Run > Run All Cells.
+
+Default notebook mode loads the fitted models and runs the downstream analyses.
+Set RETRAIN_MODELS=True near the start to train again and log new MLflow runs.
+Reports are in reports/. Full explanations are in README.md and the notebook.
+No VS Code is needed. No real accident dataset was used; the risk label is a proxy.

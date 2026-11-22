@@ -1,0 +1,60 @@
+2026-10-29 13:32:04,771 | INFO | portable_tracking | Resolved MLflow artifact paths; updated 0 run URIs
+2026-10-29 13:32:04,779 | INFO | __main__ | Notebook execution mode retrain=False
+2026-10-29 13:32:06,107 | INFO | data_features | Raw data loaded 48204 x 9
+2026-10-29 13:32:06,107 | INFO | part2_cleaning | Schema validated: all 9 expected columns present
+2026-10-29 13:32:06,142 | INFO | part2_cleaning | 0 rows affected: standardise holiday
+2026-10-29 13:32:06,168 | INFO | part2_cleaning | 0 rows affected: standardise weather_main
+2026-10-29 13:32:06,202 | WARNING | part2_cleaning | 1730 rows affected: standardise weather_description
+2026-10-29 13:32:06,210 | INFO | part2_cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-29 13:32:06,225 | WARNING | part2_cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-29 13:32:06,228 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-29 13:32:06,228 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-29 13:32:06,228 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-29 13:32:06,229 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-29 13:32:06,229 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-29 13:32:06,229 | INFO | part2_cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-29 13:32:06,235 | WARNING | part2_cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-29 13:32:06,241 | WARNING | part2_cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-29 13:32:06,243 | WARNING | part2_cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-29 13:32:06,258 | WARNING | part2_cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:32:06,272 | WARNING | part2_cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-29 13:32:06,280 | INFO | part2_cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-29 13:32:06,301 | INFO | part2_cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-29 13:32:06,331 | WARNING | part2_cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-29 13:32:06,348 | WARNING | part2_cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-10-29 13:32:06,356 | INFO | part2_cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-29 13:32:06,590 | INFO | data_features | Prepared 40575 observed hours; proxy positives 3133; feature count 28
+2026-10-29 13:32:06,750 | INFO | run_all | Loaded existing trained models; training skipped explicitly
+2026-10-29 13:32:06,834 | INFO | unsupervised | K-means k=3 silhouette=0.3818
+2026-10-29 13:32:06,908 | INFO | unsupervised | K-means k=4 silhouette=0.3642
+2026-10-29 13:32:06,990 | INFO | unsupervised | K-means k=5 silhouette=0.3925
+2026-10-29 13:32:07,289 | INFO | unsupervised | Mined 127 supported rules; sorted by TRAINING lift; holdout metrics diagnostic only
+2026-10-29 13:32:19,763 | INFO | explainability | Tree SHAP saved for 150 test observations; RF/neural MAE disagreement 286.53
+2026-10-29 13:32:19,886 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/01_regression_errors.png
+2026-10-29 13:32:20,032 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/02_precision_recall.png
+2026-10-29 13:32:20,098 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/03_confusion_matrix.png
+2026-10-29 13:32:20,210 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/04_neural_history.png
+2026-10-29 13:32:20,426 | INFO | evaluation | Figure saved /workspace/scratch/6ab473d19a06/capstone_part3/outputs/figures/05_traffic_clusters.png
+2026-10-29 13:32:20,720 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-10-29 13:32:20,921 | WARNING | recommendation | Recommendation hour 12: sparse weather sample; use 301 day-type observations
+2026-10-29 13:32:20,926 | WARNING | recommendation | Recommendation hour 13: sparse weather sample; use 306 day-type observations
+2026-10-29 13:32:20,931 | WARNING | recommendation | Recommendation hour 14: sparse weather sample; use 301 day-type observations
+2026-10-29 13:32:20,964 | INFO | recommendation | Recommendation generated for date=2018-06-23 weather=Snow window=9–15
+2026-10-29 13:32:21,196 | INFO | api | Serving mock loaded selected model versions forest_reg_v2 forest_cls_v2
+2026-10-29 13:32:21,255 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-10-29 13:32:21,258 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-10-29 13:32:21,261 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:32:21,263 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:32:21,263 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-10-29 13:32:21,401 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:32:21,403 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-10-29 13:32:21,409 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
+2026-10-29 13:32:21,410 | INFO | run_all | All seven task workflows completed
+2026-10-29 13:32:23,024 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-10-29 13:32:23,095 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-10-29 13:32:23,096 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-10-29 13:32:23,098 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:32:23,100 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-10-29 13:32:23,100 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-10-29 13:32:25,235 | INFO | __main__ | All fourteen project tests passed
+2026-10-29 13:32:25,239 | INFO | __main__ | Capstone Part 3 notebook completed

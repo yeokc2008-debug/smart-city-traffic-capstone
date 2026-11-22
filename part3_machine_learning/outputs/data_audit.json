@@ -1,0 +1,150 @@
+{
+  "audit": {
+    "raw_rows": 48204,
+    "raw_columns": 9,
+    "collapse_rule": "severe",
+    "weather_order": [
+      "Squall",
+      "Thunderstorm",
+      "Snow",
+      "Rain",
+      "Drizzle",
+      "Fog",
+      "Mist",
+      "Haze",
+      "Smoke",
+      "Clouds",
+      "Clear"
+    ],
+    "invalid_datetime_dropped": 0,
+    "exact_duplicates_dropped": 17,
+    "temp_imputed": 10,
+    "rain_1h_imputed": 1,
+    "snow_1h_imputed": 0,
+    "clouds_all_imputed": 0,
+    "timestamps_with_conflicting_volume": 0,
+    "repeated_timestamps": 5430,
+    "hourly_rows": 40575,
+    "first_timestamp": "2012-10-02 09:00:00",
+    "last_timestamp": "2018-09-30 23:00:00",
+    "missing_hours_within_span": 11976,
+    "input_sha256": "0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07",
+    "fixed_label_quartiles": [
+      1248.5,
+      3427.0,
+      4952.0
+    ],
+    "computed_full_quartiles": [
+      1248.5,
+      3427.0,
+      4952.0
+    ],
+    "train_only_quartiles": [
+      1204.0,
+      3339.0,
+      4932.0
+    ],
+    "proxy_positive_hours": 3133,
+    "imputation_fit_end": "2016-12-31 23:59:59"
+  },
+  "imputation": {
+    "temp": {
+      "fallback": 282.08,
+      "monthly": {
+        "1": 264.25,
+        "2": 264.15,
+        "3": 271.805,
+        "4": 277.77,
+        "5": 287.58,
+        "6": 292.73,
+        "7": 295.44,
+        "8": 294.31,
+        "9": 291.37,
+        "10": 282.6,
+        "11": 276.13,
+        "12": 267.33
+      }
+    },
+    "rain_1h": {
+      "fallback": 0.0,
+      "monthly": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "snow_1h": {
+      "fallback": 0.0,
+      "monthly": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "clouds_all": {
+      "fallback": 40.0,
+      "monthly": {
+        "1": 64.0,
+        "2": 75.0,
+        "3": 75.0,
+        "4": 75.0,
+        "5": 40.0,
+        "6": 32.0,
+        "7": 20.0,
+        "8": 1.0,
+        "9": 1.0,
+        "10": 40.0,
+        "11": 64.0,
+        "12": 75.0
+      }
+    }
+  },
+  "predictors": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "is_holiday",
+    "temp_c",
+    "rain_1h",
+    "snow_1h",
+    "clouds_all",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos",
+    "weather_squall",
+    "weather_thunderstorm",
+    "weather_snow",
+    "weather_rain",
+    "weather_drizzle",
+    "weather_fog",
+    "weather_mist",
+    "weather_haze",
+    "weather_smoke",
+    "weather_clouds",
+    "weather_clear",
+    "weather_unknown",
+    "is_low_visibility",
+    "is_severe_weather"
+  ]
+}
