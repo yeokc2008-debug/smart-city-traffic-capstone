@@ -1,0 +1,12 @@
+{
+  "source_rows": 48204,
+  "hourly_rows": 40575,
+  "prepared_columns": 14,
+  "congested_hours": 6107,
+  "SQL_Python_results": "PASS",
+  "embedded_source_matches_original": "PASS",
+  "PowerBI_pages": 2,
+  "PowerBI_visuals": 13,
+  "schema_documents": 20,
+  "PowerBI_Desktop_runtime": "NOT_VERIFIED"
+}

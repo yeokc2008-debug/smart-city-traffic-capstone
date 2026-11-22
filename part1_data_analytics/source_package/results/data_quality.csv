@@ -1,0 +1,10 @@
+column,expected_type,blank_or_null,note
+holiday,Text,0,None means non-holiday
+temp,Decimal K,0,10 zero Kelvin records
+rain_1h,Decimal mm,0,1 reading above 9000 mm
+snow_1h,Decimal mm,0,
+clouds_all,Whole number percent,0,
+weather_main,Text,0,
+weather_description,Text,0,
+date_time,DateTime,0,
+traffic_volume,Whole number vehicles/hour,0,
