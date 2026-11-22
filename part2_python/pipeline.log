@@ -40,3 +40,45 @@
 2026-10-27 22:49:26,141 | INFO | summaries | Saved summary: data/processed/monthly_coverage.csv
 2026-10-27 22:49:26,156 | INFO | summaries | Saved summary: data/processed/summary.json
 2026-10-27 22:49:26,156 | INFO | __main__ | Pipeline completed successfully
+2026-11-22 14:59:36,604 | INFO | __main__ | Pipeline invoked with {'input': 'data/raw/Metro_Interstate_Traffic_Volume.csv.gz', 'output_dir': 'data/processed', 'figures_dir': 'outputs/figures', 'log': 'pipeline.log', 'collapse': 'severe', 'fit_end': '2016-12-31 23:59:59', 'debug': False}
+2026-11-22 14:59:36,750 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-11-22 14:59:36,750 | INFO | __main__ | Raw file loaded: 48204 rows x 9 columns from data/raw/Metro_Interstate_Traffic_Volume.csv.gz
+2026-11-22 14:59:36,750 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-11-22 14:59:36,864 | INFO | cleaning | 0 rows affected: standardise holiday
+2026-11-22 14:59:36,976 | INFO | cleaning | 0 rows affected: standardise weather_main
+2026-11-22 14:59:37,167 | WARNING | cleaning | 1730 rows affected: standardise weather_description
+2026-11-22 14:59:37,219 | INFO | cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-11-22 14:59:37,284 | WARNING | cleaning | 17 rows affected: remove exact duplicate rows
+2026-11-22 14:59:37,303 | INFO | cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-11-22 14:59:37,303 | INFO | cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-11-22 14:59:37,306 | INFO | cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-11-22 14:59:37,313 | INFO | cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-11-22 14:59:37,317 | INFO | cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-11-22 14:59:37,319 | INFO | cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-11-22 14:59:37,349 | WARNING | cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-11-22 14:59:37,382 | WARNING | cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-11-22 14:59:37,397 | WARNING | cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-11-22 14:59:37,501 | WARNING | cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-11-22 14:59:37,587 | WARNING | cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-11-22 14:59:37,638 | INFO | cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-11-22 14:59:37,779 | INFO | cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-11-22 14:59:37,941 | WARNING | cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-11-22 14:59:38,003 | WARNING | cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-11-22 14:59:38,043 | INFO | cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-11-22 14:59:39,552 | INFO | feature_engineering | Before feature engineering: 40575 rows x 9 columns
+2026-11-22 14:59:39,750 | INFO | feature_engineering | High-risk label: 3133 of 40575 hours (7.7215%)
+2026-11-22 14:59:39,750 | INFO | feature_engineering | After feature engineering: 40575 rows x 44 columns
+2026-11-22 14:59:40,131 | INFO | __main__ | Saved data\processed\traffic_hourly.csv: 40575 rows x 9 columns
+2026-11-22 14:59:41,616 | INFO | __main__ | Saved data\processed\traffic_features.csv: 40575 rows x 44 columns
+2026-11-22 14:59:41,624 | INFO | __main__ | Saved data\processed\audit.json
+2026-11-22 14:59:41,626 | INFO | __main__ | Saved data\processed\feature_metadata.json
+2026-11-22 14:59:41,985 | INFO | visualizations | Figure saved: outputs\figures\01_hourly_day_type.png
+2026-11-22 14:59:42,276 | INFO | visualizations | Figure saved: outputs\figures\02_weather_traffic.png
+2026-11-22 14:59:43,218 | INFO | visualizations | Figure saved: outputs\figures\03_temperature_traffic.png
+2026-11-22 14:59:43,606 | INFO | visualizations | Figure saved: outputs\figures\04_traffic_distribution.png
+2026-11-22 14:59:43,658 | INFO | summaries | Saved summary: data\processed\hourly_by_day_type.csv
+2026-11-22 14:59:43,660 | INFO | summaries | Saved summary: data\processed\weather_summary.csv
+2026-11-22 14:59:43,662 | INFO | summaries | Saved summary: data\processed\yearly_summary.csv
+2026-11-22 14:59:43,664 | INFO | summaries | Saved summary: data\processed\monthly_coverage.csv
+2026-11-22 14:59:43,705 | INFO | summaries | Saved summary: data\processed\summary.json
+2026-11-22 14:59:43,705 | INFO | __main__ | Pipeline completed successfully

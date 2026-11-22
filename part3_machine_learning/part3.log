@@ -135,3 +135,4 @@
 2026-10-29 13:26:19,668 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
 2026-10-29 13:26:19,672 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
 2026-10-29 13:26:19,673 | INFO | __main__ | All seven task workflows completed
+2026-11-22 15:34:43,604 | INFO | __main__ | Resolved MLflow artifact paths; updated 0 run URIs

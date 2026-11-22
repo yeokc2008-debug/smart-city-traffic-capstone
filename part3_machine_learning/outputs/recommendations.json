@@ -12,7 +12,7 @@
         "historical_mean": 4458.094786729858,
         "n": 211,
         "support_scope": "day type, hour and weather",
-        "model_prediction": 4388.734492865956,
+        "model_prediction": 4388.734492865957,
         "ranking_score": 4423.4146397979075
       },
       {
@@ -36,7 +36,7 @@
         "historical_mean": 5550.202127659574,
         "n": 188,
         "support_scope": "day type, hour and weather",
-        "model_prediction": 5938.974141422487,
+        "model_prediction": 5938.974141422488,
         "ranking_score": 5744.588134541031
       },
       {
@@ -102,7 +102,7 @@
         "historical_mean": 4313.378737541529,
         "n": 301,
         "support_scope": "day type and hour fallback",
-        "model_prediction": 4636.1303901498295,
+        "model_prediction": 4636.130390149831,
         "ranking_score": 4474.7545638456795
       }
     ]
