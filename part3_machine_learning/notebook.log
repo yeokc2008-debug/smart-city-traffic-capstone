@@ -58,3 +58,67 @@
 2026-10-29 13:32:23,100 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
 2026-10-29 13:32:25,235 | INFO | __main__ | All fourteen project tests passed
 2026-10-29 13:32:25,239 | INFO | __main__ | Capstone Part 3 notebook completed
+2026-11-22 15:27:40,788 | INFO | portable_tracking | Resolved MLflow artifact paths; updated 10 run URIs
+2026-11-22 15:27:40,816 | INFO | __main__ | Notebook execution mode retrain=False
+2026-11-22 15:27:47,755 | INFO | data_features | Raw data loaded 48204 x 9
+2026-11-22 15:27:47,765 | INFO | part2_cleaning | Schema validated: all 9 expected columns present
+2026-11-22 15:27:47,924 | INFO | part2_cleaning | 0 rows affected: standardise holiday
+2026-11-22 15:27:48,017 | INFO | part2_cleaning | 0 rows affected: standardise weather_main
+2026-11-22 15:27:48,136 | WARNING | part2_cleaning | 1730 rows affected: standardise weather_description
+2026-11-22 15:27:48,176 | INFO | part2_cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-11-22 15:27:48,235 | WARNING | part2_cleaning | 17 rows affected: remove exact duplicate rows
+2026-11-22 15:27:48,251 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-11-22 15:27:48,255 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-11-22 15:27:48,261 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-11-22 15:27:48,264 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-11-22 15:27:48,268 | INFO | part2_cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-11-22 15:27:48,273 | INFO | part2_cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-11-22 15:27:48,298 | WARNING | part2_cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-11-22 15:27:48,330 | WARNING | part2_cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-11-22 15:27:48,343 | WARNING | part2_cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-11-22 15:27:48,444 | WARNING | part2_cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-11-22 15:27:48,544 | WARNING | part2_cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-11-22 15:27:48,601 | INFO | part2_cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-11-22 15:27:48,736 | INFO | part2_cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-11-22 15:27:48,903 | WARNING | part2_cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-11-22 15:27:48,963 | WARNING | part2_cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-11-22 15:27:49,005 | INFO | part2_cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-11-22 15:27:49,727 | INFO | data_features | Prepared 40575 observed hours; proxy positives 3133; feature count 28
+2026-11-22 15:27:50,531 | INFO | run_all | Loaded existing trained models; training skipped explicitly
+2026-11-22 15:27:54,132 | INFO | unsupervised | K-means k=3 silhouette=0.3818
+2026-11-22 15:27:54,419 | INFO | unsupervised | K-means k=4 silhouette=0.3642
+2026-11-22 15:27:54,757 | INFO | unsupervised | K-means k=5 silhouette=0.3925
+2026-11-22 15:27:55,919 | INFO | unsupervised | Mined 127 supported rules; sorted by TRAINING lift; holdout metrics diagnostic only
+2026-11-22 15:28:22,635 | INFO | explainability | Tree SHAP saved for 150 test observations; RF/neural MAE disagreement 286.53
+2026-11-22 15:28:22,892 | INFO | evaluation | Figure saved E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\outputs\figures\01_regression_errors.png
+2026-11-22 15:28:23,212 | INFO | evaluation | Figure saved E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\outputs\figures\02_precision_recall.png
+2026-11-22 15:28:23,477 | INFO | evaluation | Figure saved E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\outputs\figures\03_confusion_matrix.png
+2026-11-22 15:28:23,739 | INFO | evaluation | Figure saved E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\outputs\figures\04_neural_history.png
+2026-11-22 15:28:24,252 | INFO | evaluation | Figure saved E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\outputs\figures\05_traffic_clusters.png
+2026-11-22 15:28:24,965 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-11-22 15:28:25,666 | WARNING | recommendation | Recommendation hour 12: sparse weather sample; use 301 day-type observations
+2026-11-22 15:28:25,681 | WARNING | recommendation | Recommendation hour 13: sparse weather sample; use 306 day-type observations
+2026-11-22 15:28:25,702 | WARNING | recommendation | Recommendation hour 14: sparse weather sample; use 301 day-type observations
+2026-11-22 15:28:25,786 | INFO | recommendation | Recommendation generated for date=2018-06-23 weather=Snow window=9–15
+2026-11-22 15:28:26,463 | INFO | api | Serving mock loaded selected model versions forest_reg_v2 forest_cls_v2
+2026-11-22 15:28:26,588 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-11-22 15:28:26,593 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-11-22 15:28:26,605 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-11-22 15:28:26,613 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-11-22 15:28:26,619 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-11-22 15:28:26,935 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-11-22 15:28:26,942 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
+2026-11-22 15:28:26,953 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
+2026-11-22 15:28:26,960 | INFO | run_all | All seven task workflows completed
+2026-11-22 15:28:34,739 | INFO | recommendation | Recommendation generated for date=2018-06-18 weather=Clear window=7–12
+2026-11-22 15:28:34,906 | INFO | __main__ | Installing full MLflow 3.17.2 for the web UI; please wait
+2026-11-22 15:30:31,374 | INFO | __main__ | Full MLflow installation completed
+2026-11-22 15:30:31,458 | INFO | __main__ | Starting MLflow UI; server output: E:\FINAL CAPSTONE PROJECT\smart-city-traffic-capstone\part3_machine_learning\mlflow_ui.log
+2026-11-22 15:31:01,860 | INFO | __main__ | MLflow UI ready at http://127.0.0.1:5000
+2026-11-22 15:31:02,183 | INFO | api | Prediction served timestamp=2018-06-18 08:00:00 weather=Clear
+2026-11-22 15:31:02,188 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-11-22 15:31:02,195 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-11-22 15:31:02,203 | INFO | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-11-22 15:31:02,206 | WARNING | api | API validation simulation rejected malformed date and forbidden target input with HTTP 422
+2026-11-22 15:31:12,117 | INFO | __main__ | All fourteen project tests passed
+2026-11-22 15:31:12,195 | INFO | __main__ | Capstone Part 3 notebook completed
