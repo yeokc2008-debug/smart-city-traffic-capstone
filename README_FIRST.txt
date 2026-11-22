@@ -1,0 +1,1 @@
+Start with README.md and SUBMISSION_CHECKLIST.md. This portfolio contains Parts 1, 2 and 3. The final corrected Power BI .pbix from your laptop must be added to part1_data_analytics/powerbi/. Part 3 full rerun remains to be checked in an environment with SHAP and MLflow installed.
