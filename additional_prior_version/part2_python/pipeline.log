@@ -1,0 +1,12 @@
+2026-09-09 19:57:15,700 | INFO | __main__ | Loaded 48204 rows and 9 columns from data/Metro_Interstate_Traffic_Volume.csv
+2026-09-09 19:57:15,746 | WARNING | __main__ | Dropped 17 exact duplicate rows
+2026-09-09 19:57:15,765 | WARNING | __main__ | Imputed 10 impossible temperature values with monthly medians
+2026-09-09 19:57:15,766 | WARNING | __main__ | Imputed 1 implausible rainfall values
+2026-09-09 19:57:15,918 | INFO | __main__ | Saved cleaned data: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/data/processed/traffic_clean.csv
+2026-09-09 19:57:15,919 | INFO | feature_engineering | Feature engineering input shape: (48187, 9)
+2026-09-09 19:57:15,961 | INFO | feature_engineering | Feature engineering output shape: (48187, 34)
+2026-09-09 19:57:16,534 | INFO | __main__ | Saved feature data: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/data/processed/traffic_features.csv
+2026-09-09 19:57:16,665 | INFO | visualizations | Saved figure: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/part2_python/figures/hourly_traffic.png
+2026-09-09 19:57:16,736 | INFO | visualizations | Saved figure: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/part2_python/figures/weekday_weekend.png
+2026-09-09 19:57:16,825 | INFO | visualizations | Saved figure: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/part2_python/figures/weather_traffic.png
+2026-09-09 19:57:16,954 | INFO | visualizations | Saved figure: /workspace/scratch/f7d042fe89b8/smart-city-traffic-capstone/part2_python/figures/temperature_scatter.png

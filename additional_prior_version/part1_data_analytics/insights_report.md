@@ -1,0 +1,9 @@
+# Part 1 Data Analytics Insights Report
+
+The dataset contains 48,204 hourly observations and nine columns. Traffic volume averages 3,259.82 vehicles per hour, with a median of 3,380, standard deviation of 1,986.86, variance of 3,947,615.32 and range of 7,280. The large spread confirms strong differences between low-demand and peak periods. Temperature and traffic have a weak positive correlation of 0.1303; this is not evidence that warmer weather causes traffic because hour, season, work patterns and data coverage confound the relationship.
+
+Annual recorded volume rises from 8.21 million in 2012 to 28.18 million in 2013, falls to 15.73 million in 2014 and 14.18 million in 2015, then rises to 29.49 million in 2016 and 35.43 million in 2017. These are totals of recorded rows, so the sharp changes must not be interpreted as real demand changes without checking coverage. 2012 begins in October, and gaps in other years materially affect totals. Daily or hourly averages on comparable periods are safer operational measures.
+
+Congestion above 5,500 vehicles occurs in 14.73% of records. Clear weather occurs in 27.78%, while congestion and clear weather occur together in 3.66%. The observed joint probability is below the 4.09% product expected under exact independence, and the clear-versus-cloudy congestion odds ratio is 0.735. This indicates a modest association in the observed data, not causality. Only 24.83% of congested records are clear and 26.30% are above 292 K.
+
+Clouds has the highest average traffic among broad weather groups and Squall the lowest, with a difference of about 1,556.70 vehicles per hour. Rare conditions have small samples and may coincide with particular hours or seasons, so the dashboard should display counts alongside averages. For mobility planning, prioritise time-of-day and weekday/weekend demand patterns; use weather as supporting context and monitor corridor coverage before making year-on-year claims.

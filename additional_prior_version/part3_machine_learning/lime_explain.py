@@ -1,0 +1,8 @@
+"""Small LIME-style local surrogate explainer for one regression prediction."""
+import logging,numpy as np,pandas as pd,joblib
+from pathlib import Path
+from sklearn.linear_model import Ridge
+logging.basicConfig(level=logging.INFO); logger=logging.getLogger(__name__); ROOT=Path(__file__).resolve().parents[1]
+df=pd.read_csv(ROOT/'data/processed/traffic_clean.csv',parse_dates=['date_time']); df['hour']=df.date_time.dt.hour; df['dow']=df.date_time.dt.dayofweek; df['hour_sin']=np.sin(2*np.pi*df.hour/24); df['hour_cos']=np.cos(2*np.pi*df.hour/24); df['dow_sin']=np.sin(2*np.pi*df.dow/7); df['dow_cos']=np.cos(2*np.pi*df.dow/7); df['is_holiday']=(df.holiday!='None').astype(int)
+features=['temp','rain_1h','snow_1h','clouds_all','hour_sin','hour_cos','dow_sin','dow_cos','is_holiday','weather_main']; nums=features[:-1]; row=df.nlargest(1,'traffic_volume')[features].copy(); rng=np.random.default_rng(42); n=1000; pert=pd.DataFrame(np.tile(row[nums].values,(n,1)),columns=nums); scales=df[nums].std().replace(0,1); pert += rng.normal(size=(n,len(nums)))*scales.values*.15; pert['weather_main']=row.weather_main.iloc[0]
+model=joblib.load(Path(__file__).parent/'models/random_forest_regression.joblib'); y=model.predict(pert); dist=np.sqrt((((pert[nums]-row[nums].iloc[0])/scales)**2).sum(axis=1)); weights=np.exp(-(dist**2)); surrogate=Ridge(alpha=1).fit(pert[nums],y,sample_weight=weights); pd.DataFrame({'feature':nums,'local_coefficient':surrogate.coef_}).sort_values('local_coefficient',key=abs,ascending=False).to_csv(Path(__file__).parent/'lime_local_explanation.csv',index=False); logger.info('Saved LIME-style local surrogate explanation')

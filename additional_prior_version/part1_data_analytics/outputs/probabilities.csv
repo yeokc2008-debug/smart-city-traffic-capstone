@@ -1,0 +1,9 @@
+,value
+P_congestion,0.1472906812712638
+P_clear,0.277798522944154
+P_congestion_and_clear,0.03657372832130114
+P_clear_given_congestion,0.2483098591549296
+P_hot_given_congestion,0.26295774647887327
+P_congestion_x_P_clear,0.04091713370059525
+independence_gap,-0.004343405379294112
+odds_ratio_clear_vs_cloudy,0.7353882125733118
