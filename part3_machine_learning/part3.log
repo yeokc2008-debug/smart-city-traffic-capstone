@@ -135,13 +135,3 @@
 2026-10-29 13:26:19,668 | INFO | monitoring | Monitoring PASS: thresholds not exceeded
 2026-10-29 13:26:19,672 | WARNING | monitoring | Monitoring ALERT: temp_c PSI=1.356 exceeds 0.20; MAE exceeds 1.25 times validation reference
 2026-10-29 13:26:19,673 | INFO | __main__ | All seven task workflows completed
-2026-11-22 14:33:50,661 | ERROR | __main__ | Part 3 failed: No module named 'shap'
-Traceback (most recent call last):
-  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/run_all.py", line 41, in main
-    try:run(a.reuse_models);return 0
-        ^^^^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/run_all.py", line 15, in run
-    from explainability import explain_demand
-  File "/workspace/scratch/1c8df20191f3/review/smart-city-traffic-capstone/part3_machine_learning/explainability.py", line 8, in <module>
-    import shap
-ModuleNotFoundError: No module named 'shap'
