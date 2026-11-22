@@ -1,0 +1,128 @@
+{
+  "fit_end": "2016-12-31 23:59:59",
+  "scaling": {
+    "temp_c": {
+      "mean": 7.792281771882055,
+      "population_sd": 13.153222081683554
+    },
+    "rain_1h": {
+      "mean": 0.10535196809980654,
+      "population_sd": 0.950025146362041
+    }
+  },
+  "quartiles": {
+    "q1": 1248.5,
+    "q2": 3427.0,
+    "q3": 4952.0
+  },
+  "quartile_scope": "all observed cleaned hourly rows; descriptive assignment labels",
+  "high_risk_rule": "traffic_volume > 3427.0 AND selected weather in ['Fog', 'Haze', 'Mist', 'Smoke', 'Snow', 'Squall', 'Thunderstorm']",
+  "model_predictor_columns": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "is_holiday",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "month_sin",
+    "month_cos",
+    "temp_c_scaled",
+    "rain_1h_scaled",
+    "snow_1h",
+    "clouds_all",
+    "is_low_visibility",
+    "is_severe_weather",
+    "weather_squall",
+    "weather_thunderstorm",
+    "weather_snow",
+    "weather_rain",
+    "weather_drizzle",
+    "weather_fog",
+    "weather_mist",
+    "weather_haze",
+    "weather_smoke",
+    "weather_clouds",
+    "weather_clear",
+    "weather_unknown"
+  ],
+  "exclude_from_predictors": [
+    "traffic_volume",
+    "congestion_category",
+    "traffic_category_part1",
+    "congested_part1",
+    "high_risk"
+  ],
+  "part3_note": "For strict future evaluation refit all preprocessing and label quartiles on training data only. Do not feed contemporaneous traffic or its derived categories into the proxy classifier. The proxy is not an actual accident outcome.",
+  "imputation": {
+    "temp": {
+      "fallback": 282.08,
+      "monthly": {
+        "1": 264.25,
+        "2": 264.15,
+        "3": 271.805,
+        "4": 277.77,
+        "5": 287.58,
+        "6": 292.73,
+        "7": 295.44,
+        "8": 294.31,
+        "9": 291.37,
+        "10": 282.6,
+        "11": 276.13,
+        "12": 267.33
+      }
+    },
+    "rain_1h": {
+      "fallback": 0.0,
+      "monthly": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "snow_1h": {
+      "fallback": 0.0,
+      "monthly": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "clouds_all": {
+      "fallback": 40.0,
+      "monthly": {
+        "1": 64.0,
+        "2": 75.0,
+        "3": 75.0,
+        "4": 75.0,
+        "5": 40.0,
+        "6": 32.0,
+        "7": 20.0,
+        "8": 1.0,
+        "9": 1.0,
+        "10": 40.0,
+        "11": 64.0,
+        "12": 75.0
+      }
+    }
+  }
+}

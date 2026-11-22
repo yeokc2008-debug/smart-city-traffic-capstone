@@ -1,0 +1,76 @@
+2026-10-28 14:27:15,129 | INFO | __main__ | Jupyter entry point configured
+2026-10-28 14:27:15,214 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-10-28 14:27:15,214 | INFO | pipeline | Raw file loaded: 48204 rows x 9 columns from /workspace/scratch/6ab473d19a06/Capstone_Part2/data/raw/Metro_Interstate_Traffic_Volume.csv.gz
+2026-10-28 14:27:15,392 | ERROR | __main__ | Expected schema validation demonstration: Missing expected columns: ['temp']
+2026-10-28 14:27:15,471 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-10-28 14:27:15,530 | INFO | cleaning | 0 rows affected: standardise holiday
+2026-10-28 14:27:15,564 | INFO | cleaning | 0 rows affected: standardise weather_main
+2026-10-28 14:27:15,615 | WARNING | cleaning | 1730 rows affected: standardise weather_description
+2026-10-28 14:27:15,629 | INFO | cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-28 14:27:15,653 | WARNING | cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-28 14:27:15,658 | INFO | cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-28 14:27:15,658 | INFO | cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-28 14:27:15,659 | INFO | cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-28 14:27:15,660 | INFO | cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-28 14:27:15,660 | INFO | cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-28 14:27:15,662 | INFO | cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-28 14:27:15,672 | WARNING | cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-28 14:27:15,682 | WARNING | cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-28 14:27:15,684 | WARNING | cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-28 14:27:15,709 | WARNING | cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-28 14:27:15,733 | WARNING | cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-28 14:27:15,745 | INFO | cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-28 14:27:15,777 | INFO | cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-28 14:27:15,824 | WARNING | cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-28 14:27:15,851 | WARNING | cleaning | 7612 rows affected: collapse repeated hours using severe weather selection
+2026-10-28 14:27:15,870 | INFO | cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-28 14:27:15,914 | INFO | feature_engineering | Before feature engineering: 40575 rows x 9 columns
+2026-10-28 14:27:16,025 | INFO | feature_engineering | High-risk label: 3133 of 40575 hours (7.7215%)
+2026-10-28 14:27:16,025 | INFO | feature_engineering | After feature engineering: 40575 rows x 44 columns
+2026-10-28 14:27:16,112 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-10-28 14:27:16,169 | INFO | cleaning | 0 rows affected: standardise holiday
+2026-10-28 14:27:16,204 | INFO | cleaning | 0 rows affected: standardise weather_main
+2026-10-28 14:27:16,259 | WARNING | cleaning | 1730 rows affected: standardise weather_description
+2026-10-28 14:27:16,268 | INFO | cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-28 14:27:16,293 | WARNING | cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-28 14:27:16,299 | INFO | cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-28 14:27:16,300 | INFO | cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-28 14:27:16,300 | INFO | cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-28 14:27:16,301 | INFO | cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-28 14:27:16,302 | INFO | cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-28 14:27:16,303 | INFO | cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-28 14:27:16,315 | WARNING | cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-28 14:27:16,325 | WARNING | cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-28 14:27:16,328 | WARNING | cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-28 14:27:16,350 | WARNING | cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-28 14:27:16,369 | WARNING | cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-28 14:27:16,378 | INFO | cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-28 14:27:16,417 | INFO | cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-28 14:27:16,466 | WARNING | cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-28 14:27:16,498 | WARNING | cleaning | 7612 rows affected: collapse repeated hours using first weather selection
+2026-10-28 14:27:16,527 | INFO | cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-28 14:27:16,569 | INFO | __main__ | Saved selection-rule comparison
+2026-10-28 14:27:16,799 | INFO | __main__ | Saved traffic_hourly.csv: 40575 rows x 9 columns
+2026-10-28 14:27:17,789 | INFO | __main__ | Saved traffic_features.csv: 40575 rows x 44 columns
+2026-10-28 14:27:17,790 | INFO | __main__ | Saved audit.json
+2026-10-28 14:27:17,790 | INFO | __main__ | Saved feature_metadata.json
+2026-10-28 14:27:17,803 | INFO | summaries | Saved summary: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/hourly_by_day_type.csv
+2026-10-28 14:27:17,804 | INFO | summaries | Saved summary: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/weather_summary.csv
+2026-10-28 14:27:17,804 | INFO | summaries | Saved summary: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/yearly_summary.csv
+2026-10-28 14:27:17,805 | INFO | summaries | Saved summary: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/monthly_coverage.csv
+2026-10-28 14:27:17,828 | INFO | summaries | Saved summary: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/summary.json
+2026-10-28 14:27:18,044 | INFO | visualizations | Figure saved: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/figures/01_hourly_day_type.png
+2026-10-28 14:27:18,221 | INFO | visualizations | Figure saved: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/figures/02_weather_traffic.png
+2026-10-28 14:27:18,730 | INFO | visualizations | Figure saved: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/figures/03_temperature_traffic.png
+2026-10-28 14:27:18,942 | INFO | visualizations | Figure saved: /workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/figures/04_traffic_distribution.png
+2026-10-28 14:27:19,459 | INFO | __main__ | CLI demonstration ['--help'] returned 0
+2026-10-28 14:27:20,002 | INFO | __main__ | CLI demonstration ['at', '2017-06-15 08:00:00'] returned 0
+2026-10-28 14:27:20,566 | INFO | __main__ | CLI demonstration ['high', '--threshold', '5500', '--limit', '5'] returned 0
+2026-10-28 14:27:21,091 | INFO | __main__ | CLI demonstration ['compare'] returned 0
+2026-10-28 14:27:21,659 | INFO | __main__ | CLI demonstration ['travel', '--day-type', 'weekday', '--start', '7', '--end', '10'] returned 0
+2026-10-28 14:27:22,199 | INFO | __main__ | CLI demonstration ['at', 'not-a-date'] returned 2
+2026-10-28 14:27:22,201 | INFO | __main__ | Saved real CLI demonstration outputs
+2026-10-28 14:27:22,203 | DEBUG | __main__ | Notebook quartile parameters: {'q1': 1248.5, 'q2': 3427.0, 'q3': 4952.0}
+2026-10-28 14:27:26,524 | INFO | __main__ | Standalone pipeline integration run passed
+2026-10-28 14:27:35,623 | INFO | __main__ | All ten project tests passed
+2026-10-28 14:27:35,665 | INFO | __main__ | Notebook completed successfully

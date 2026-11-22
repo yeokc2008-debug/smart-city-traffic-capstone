@@ -1,0 +1,62 @@
+[
+  {
+    "arguments": [
+      "--help"
+    ],
+    "exit_code": 0,
+    "stdout": "usage: app.py [-h] [--data DATA] [--log LOG] [--debug]\n              {at,high,compare,travel} ...\n\nQuery observed traffic hours; no route or live travel-time predictions\n\npositional arguments:\n  {at,high,compare,travel}\n    at                  Find an exact recorded local hour\n    high                List observed hours above a traffic threshold\n    compare             Compare observed weekday and weekend traffic\n    travel              Rank historically quieter hours inside your permitted\n                        window\n\noptions:\n  -h, --help            show this help message and exit\n  --data DATA\n  --log LOG\n  --debug\n",
+    "stderr": ""
+  },
+  {
+    "arguments": [
+      "at",
+      "2017-06-15 08:00:00"
+    ],
+    "exit_code": 0,
+    "stdout": "No observation for that hour; missing records are not zero traffic.\n",
+    "stderr": "2026-10-28 14:27:19,835 | INFO | __main__ | CLI command=at arguments={'data': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/traffic_features.csv', 'log': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/app.log', 'debug': False, 'command': 'at', 'timestamp': '2017-06-15 08:00:00'}\n"
+  },
+  {
+    "arguments": [
+      "high",
+      "--threshold",
+      "5500",
+      "--limit",
+      "5"
+    ],
+    "exit_code": 0,
+    "stdout": "2,556 observed hours exceed 5500 vehicles/hour.\n          date_time  traffic_volume weather_main\n2013-04-30 07:00:00            7217        Clear\n2012-11-14 16:00:00            7189       Clouds\n2013-04-18 07:00:00            7150       Clouds\n2013-04-09 07:00:00            7110      Drizzle\n2013-11-07 07:00:00            7110         Mist\n",
+    "stderr": "2026-10-28 14:27:20,406 | INFO | __main__ | CLI command=high arguments={'data': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/traffic_features.csv', 'log': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/app.log', 'debug': False, 'command': 'high', 'threshold': '5500', 'limit': '5'}\n"
+  },
+  {
+    "arguments": [
+      "compare"
+    ],
+    "exit_code": 0,
+    "stdout": "               mean  count\nis_weekend                \nWeekday    3,567.90  11365\nWeekend    2,577.64   4527\n",
+    "stderr": "2026-10-28 14:27:20,948 | INFO | __main__ | CLI command=compare arguments={'data': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/traffic_features.csv', 'log': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/app.log', 'debug': False, 'command': 'compare'}\n"
+  },
+  {
+    "arguments": [
+      "travel",
+      "--day-type",
+      "weekday",
+      "--start",
+      "7",
+      "--end",
+      "10"
+    ],
+    "exit_code": 0,
+    "stdout": "         mean  count\nhour                \n10   4,415.06    471\n9    4,906.10    459\n8    5,533.27    470\n7    6,047.94    461\nHistorical average volumes only. Lower volume does not guarantee shorter or safer journeys.\n",
+    "stderr": "2026-10-28 14:27:21,506 | INFO | __main__ | CLI command=travel arguments={'data': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/traffic_features.csv', 'log': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/app.log', 'debug': False, 'command': 'travel', 'day_type': 'weekday', 'start': '7', 'end': '10'}\n"
+  },
+  {
+    "arguments": [
+      "at",
+      "not-a-date"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "2026-10-28 14:27:22,049 | INFO | __main__ | CLI command=at arguments={'data': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/processed/traffic_features.csv', 'log': '/workspace/scratch/6ab473d19a06/Capstone_Part2/notebook_outputs/app.log', 'debug': False, 'command': 'at', 'timestamp': 'not-a-date'}\n2026-10-28 14:27:22,130 | ERROR | __main__ | Cannot answer command: time data \"not-a-date\" doesn't match format \"%Y-%m-%d %H:%M:%S\", at position 0. You might want to try:\n    - passing `format` if your strings have a consistent format;\n    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;\n    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.\n"
+  }
+]

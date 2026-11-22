@@ -1,0 +1,13 @@
+{
+  "hours": 40575,
+  "mean_traffic": 3290.650474430068,
+  "median_traffic": 3427.0,
+  "sd_traffic": 1984.7729092722152,
+  "mean_temp_c": 8.231861121380183,
+  "temperature_correlation": 0.13953568130653285,
+  "high_risk_hours": 3133,
+  "high_risk_percent": 7.721503388786198,
+  "part1_congested_hours": 6107,
+  "weekday_mean": 3557.4404568825703,
+  "weekend_mean": 2623.9285960676093
+}

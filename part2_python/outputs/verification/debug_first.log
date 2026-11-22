@@ -1,0 +1,93 @@
+2026-10-27 22:41:41,339 | INFO | __main__ | Pipeline invoked with {'input': 'data/raw/Metro_Interstate_Traffic_Volume.csv.gz', 'output_dir': 'outputs/verification/first_processed', 'figures_dir': 'outputs/verification/first_figures', 'log': 'outputs/verification/debug_first.log', 'collapse': 'first', 'fit_end': '2016-12-31 23:59:59', 'debug': True}
+2026-10-27 22:41:41,377 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-10-27 22:41:41,377 | INFO | __main__ | Raw file loaded: 48204 rows x 9 columns from data/raw/Metro_Interstate_Traffic_Volume.csv.gz
+2026-10-27 22:41:41,377 | INFO | cleaning | Schema validated: all 9 expected columns present
+2026-10-27 22:41:41,412 | INFO | cleaning | 0 rows affected: standardise holiday
+2026-10-27 22:41:41,439 | INFO | cleaning | 0 rows affected: standardise weather_main
+2026-10-27 22:41:41,473 | WARNING | cleaning | 1730 rows affected: standardise weather_description
+2026-10-27 22:41:41,481 | INFO | cleaning | 0 rows affected: drop invalid or non-hourly timestamps
+2026-10-27 22:41:41,497 | WARNING | cleaning | 17 rows affected: remove exact duplicate rows
+2026-10-27 22:41:41,500 | INFO | cleaning | 0 rows affected: coerce nonnumeric temp to missing
+2026-10-27 22:41:41,501 | INFO | cleaning | 0 rows affected: coerce nonnumeric rain_1h to missing
+2026-10-27 22:41:41,501 | INFO | cleaning | 0 rows affected: coerce nonnumeric snow_1h to missing
+2026-10-27 22:41:41,501 | INFO | cleaning | 0 rows affected: coerce nonnumeric clouds_all to missing
+2026-10-27 22:41:41,502 | INFO | cleaning | 0 rows affected: coerce nonnumeric traffic_volume to missing
+2026-10-27 22:41:41,502 | INFO | cleaning | 0 rows affected: drop missing, negative or fractional traffic targets; do not impute target
+2026-10-27 22:41:41,507 | WARNING | cleaning | 10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+2026-10-27 22:41:41,513 | WARNING | cleaning | 4 rows imputed: temp month=1 median=264.2500
+2026-10-27 22:41:41,513 | DEBUG | cleaning | Imputation temp month=1 median=264.2500
+2026-10-27 22:41:41,515 | WARNING | cleaning | 6 rows imputed: temp month=2 median=264.1500
+2026-10-27 22:41:41,515 | DEBUG | cleaning | Imputation temp month=2 median=264.1500
+2026-10-27 22:41:41,516 | DEBUG | cleaning | Imputation temp month=3 median=271.8050
+2026-10-27 22:41:41,518 | DEBUG | cleaning | Imputation temp month=4 median=277.7700
+2026-10-27 22:41:41,520 | DEBUG | cleaning | Imputation temp month=5 median=287.5800
+2026-10-27 22:41:41,521 | DEBUG | cleaning | Imputation temp month=6 median=292.7300
+2026-10-27 22:41:41,523 | DEBUG | cleaning | Imputation temp month=7 median=295.4400
+2026-10-27 22:41:41,524 | DEBUG | cleaning | Imputation temp month=8 median=294.3100
+2026-10-27 22:41:41,526 | DEBUG | cleaning | Imputation temp month=9 median=291.3700
+2026-10-27 22:41:41,527 | DEBUG | cleaning | Imputation temp month=10 median=282.6000
+2026-10-27 22:41:41,529 | DEBUG | cleaning | Imputation temp month=11 median=276.1300
+2026-10-27 22:41:41,530 | DEBUG | cleaning | Imputation temp month=12 median=267.3300
+2026-10-27 22:41:41,530 | WARNING | cleaning | 1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-27 22:41:41,537 | DEBUG | cleaning | Imputation rain_1h month=1 median=0.0000
+2026-10-27 22:41:41,538 | DEBUG | cleaning | Imputation rain_1h month=2 median=0.0000
+2026-10-27 22:41:41,540 | DEBUG | cleaning | Imputation rain_1h month=3 median=0.0000
+2026-10-27 22:41:41,541 | DEBUG | cleaning | Imputation rain_1h month=4 median=0.0000
+2026-10-27 22:41:41,543 | DEBUG | cleaning | Imputation rain_1h month=5 median=0.0000
+2026-10-27 22:41:41,544 | DEBUG | cleaning | Imputation rain_1h month=6 median=0.0000
+2026-10-27 22:41:41,546 | WARNING | cleaning | 1 rows imputed: rain_1h month=7 median=0.0000
+2026-10-27 22:41:41,546 | DEBUG | cleaning | Imputation rain_1h month=7 median=0.0000
+2026-10-27 22:41:41,548 | DEBUG | cleaning | Imputation rain_1h month=8 median=0.0000
+2026-10-27 22:41:41,549 | DEBUG | cleaning | Imputation rain_1h month=9 median=0.0000
+2026-10-27 22:41:41,551 | DEBUG | cleaning | Imputation rain_1h month=10 median=0.0000
+2026-10-27 22:41:41,552 | DEBUG | cleaning | Imputation rain_1h month=11 median=0.0000
+2026-10-27 22:41:41,554 | DEBUG | cleaning | Imputation rain_1h month=12 median=0.0000
+2026-10-27 22:41:41,554 | INFO | cleaning | 0 rows affected: snow_1h outside [0, 9000] or missing; mark for monthly median imputation
+2026-10-27 22:41:41,560 | DEBUG | cleaning | Imputation snow_1h month=1 median=0.0000
+2026-10-27 22:41:41,561 | DEBUG | cleaning | Imputation snow_1h month=2 median=0.0000
+2026-10-27 22:41:41,563 | DEBUG | cleaning | Imputation snow_1h month=3 median=0.0000
+2026-10-27 22:41:41,564 | DEBUG | cleaning | Imputation snow_1h month=4 median=0.0000
+2026-10-27 22:41:41,566 | DEBUG | cleaning | Imputation snow_1h month=5 median=0.0000
+2026-10-27 22:41:41,567 | DEBUG | cleaning | Imputation snow_1h month=6 median=0.0000
+2026-10-27 22:41:41,569 | DEBUG | cleaning | Imputation snow_1h month=7 median=0.0000
+2026-10-27 22:41:41,570 | DEBUG | cleaning | Imputation snow_1h month=8 median=0.0000
+2026-10-27 22:41:41,572 | DEBUG | cleaning | Imputation snow_1h month=9 median=0.0000
+2026-10-27 22:41:41,573 | DEBUG | cleaning | Imputation snow_1h month=10 median=0.0000
+2026-10-27 22:41:41,574 | DEBUG | cleaning | Imputation snow_1h month=11 median=0.0000
+2026-10-27 22:41:41,576 | DEBUG | cleaning | Imputation snow_1h month=12 median=0.0000
+2026-10-27 22:41:41,576 | INFO | cleaning | 0 rows affected: clouds_all outside [0, 100] or missing; mark for monthly median imputation
+2026-10-27 22:41:41,582 | DEBUG | cleaning | Imputation clouds_all month=1 median=64.0000
+2026-10-27 22:41:41,584 | DEBUG | cleaning | Imputation clouds_all month=2 median=75.0000
+2026-10-27 22:41:41,585 | DEBUG | cleaning | Imputation clouds_all month=3 median=75.0000
+2026-10-27 22:41:41,587 | DEBUG | cleaning | Imputation clouds_all month=4 median=75.0000
+2026-10-27 22:41:41,589 | DEBUG | cleaning | Imputation clouds_all month=5 median=40.0000
+2026-10-27 22:41:41,590 | DEBUG | cleaning | Imputation clouds_all month=6 median=32.0000
+2026-10-27 22:41:41,592 | DEBUG | cleaning | Imputation clouds_all month=7 median=20.0000
+2026-10-27 22:41:41,593 | DEBUG | cleaning | Imputation clouds_all month=8 median=1.0000
+2026-10-27 22:41:41,595 | DEBUG | cleaning | Imputation clouds_all month=9 median=1.0000
+2026-10-27 22:41:41,596 | DEBUG | cleaning | Imputation clouds_all month=10 median=40.0000
+2026-10-27 22:41:41,597 | DEBUG | cleaning | Imputation clouds_all month=11 median=64.0000
+2026-10-27 22:41:41,599 | DEBUG | cleaning | Imputation clouds_all month=12 median=75.0000
+2026-10-27 22:41:41,609 | WARNING | cleaning | 1348 rows affected: propagate holiday marker within observed calendar date
+2026-10-27 22:41:41,616 | WARNING | cleaning | 7612 rows affected: collapse repeated hours using first weather selection
+2026-10-27 22:41:41,626 | INFO | cleaning | Hourly cleaning complete: 40575 rows, 11976 missing hours within span retained as gaps
+2026-10-27 22:41:41,836 | INFO | feature_engineering | Before feature engineering: 40575 rows x 9 columns
+2026-10-27 22:41:41,897 | DEBUG | feature_engineering | Scaling temp_c mean=7.792304 sd=13.153246
+2026-10-27 22:41:41,897 | DEBUG | feature_engineering | Scaling rain_1h mean=0.105352 sd=0.950025
+2026-10-27 22:41:41,899 | DEBUG | feature_engineering | Congestion quartiles q1=1248.5000 q2=3427.0000 q3=4952.0000
+2026-10-27 22:41:41,905 | INFO | feature_engineering | High-risk label: 2964 of 40575 hours (7.3050%)
+2026-10-27 22:41:41,905 | INFO | feature_engineering | After feature engineering: 40575 rows x 44 columns
+2026-10-27 22:41:42,053 | INFO | __main__ | Saved outputs/verification/first_processed/traffic_hourly.csv: 40575 rows x 9 columns
+2026-10-27 22:41:42,671 | INFO | __main__ | Saved outputs/verification/first_processed/traffic_features.csv: 40575 rows x 44 columns
+2026-10-27 22:41:42,672 | INFO | __main__ | Saved outputs/verification/first_processed/audit.json
+2026-10-27 22:41:42,672 | INFO | __main__ | Saved outputs/verification/first_processed/feature_metadata.json
+2026-10-27 22:41:42,807 | INFO | visualizations | Figure saved: outputs/verification/first_figures/01_hourly_day_type.png
+2026-10-27 22:41:42,931 | INFO | visualizations | Figure saved: outputs/verification/first_figures/02_weather_traffic.png
+2026-10-27 22:41:43,226 | INFO | visualizations | Figure saved: outputs/verification/first_figures/03_temperature_traffic.png
+2026-10-27 22:41:43,366 | INFO | visualizations | Figure saved: outputs/verification/first_figures/04_traffic_distribution.png
+2026-10-27 22:41:43,377 | INFO | summaries | Saved summary: outputs/verification/first_processed/hourly_by_day_type.csv
+2026-10-27 22:41:43,377 | INFO | summaries | Saved summary: outputs/verification/first_processed/weather_summary.csv
+2026-10-27 22:41:43,377 | INFO | summaries | Saved summary: outputs/verification/first_processed/yearly_summary.csv
+2026-10-27 22:41:43,378 | INFO | summaries | Saved summary: outputs/verification/first_processed/monthly_coverage.csv
+2026-10-27 22:41:43,394 | INFO | summaries | Saved summary: outputs/verification/first_processed/summary.json
+2026-10-27 22:41:43,394 | INFO | __main__ | Pipeline completed successfully

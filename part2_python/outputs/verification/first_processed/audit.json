@@ -1,0 +1,31 @@
+{
+  "raw_rows": 48204,
+  "raw_columns": 9,
+  "collapse_rule": "first",
+  "weather_order": [
+    "Squall",
+    "Thunderstorm",
+    "Snow",
+    "Rain",
+    "Drizzle",
+    "Fog",
+    "Mist",
+    "Haze",
+    "Smoke",
+    "Clouds",
+    "Clear"
+  ],
+  "invalid_datetime_dropped": 0,
+  "exact_duplicates_dropped": 17,
+  "temp_imputed": 10,
+  "rain_1h_imputed": 1,
+  "snow_1h_imputed": 0,
+  "clouds_all_imputed": 0,
+  "timestamps_with_conflicting_volume": 0,
+  "repeated_timestamps": 5430,
+  "hourly_rows": 40575,
+  "first_timestamp": "2012-10-02 09:00:00",
+  "last_timestamp": "2018-09-30 23:00:00",
+  "missing_hours_within_span": 11976,
+  "input_sha256": "0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07"
+}

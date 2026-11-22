@@ -1,0 +1,32 @@
+[
+  {
+    "command": "python app.py at 2017-06-15 08:00:00",
+    "exit_code": 0,
+    "stdout": "No observation for that hour; missing records are not zero traffic.\n",
+    "stderr": "2026-10-27 22:41:38,962 | INFO | __main__ | CLI command=at arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'at', 'timestamp': '2017-06-15 08:00:00'}\n"
+  },
+  {
+    "command": "python app.py high --limit 3",
+    "exit_code": 0,
+    "stdout": "2,571 observed hours exceed 5500 vehicles/hour.\n          date_time  traffic_volume weather_main\n2013-04-30 07:00:00            7217        Clear\n2012-11-14 16:00:00            7189       Clouds\n2013-04-18 07:00:00            7150       Clouds\n",
+    "stderr": "2026-10-27 22:41:39,267 | INFO | __main__ | CLI command=high arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'high', 'threshold': '5500', 'limit': '3'}\n"
+  },
+  {
+    "command": "python app.py compare",
+    "exit_code": 0,
+    "stdout": "               mean  count\nis_weekend                \nWeekday    3,567.82  11429\nWeekend    2,579.54   4572\n",
+    "stderr": "2026-10-27 22:41:39,569 | INFO | __main__ | CLI command=compare arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'compare'}\n"
+  },
+  {
+    "command": "python app.py travel --start 7 --end 10",
+    "exit_code": 0,
+    "stdout": "         mean  count\nhour                \n10   4,415.94    473\n9    4,906.53    461\n8    5,535.22    472\n7    6,047.45    462\nHistorical average volumes only. Lower volume does not guarantee shorter or safer journeys.\n",
+    "stderr": "2026-10-27 22:41:39,878 | INFO | __main__ | CLI command=travel arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'travel', 'day_type': 'weekday', 'start': '7', 'end': '10'}\n"
+  },
+  {
+    "command": "python app.py at bad-date",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "2026-10-27 22:41:40,195 | INFO | __main__ | CLI command=at arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'at', 'timestamp': 'bad-date'}\n2026-10-27 22:41:40,250 | ERROR | __main__ | Cannot answer command: time data \"bad-date\" doesn't match format \"%Y-%m-%d %H:%M:%S\", at position 0. You might want to try:\n    - passing `format` if your strings have a consistent format;\n    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;\n    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.\n"
+  }
+]

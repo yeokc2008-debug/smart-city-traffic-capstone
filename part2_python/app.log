@@ -1,0 +1,10 @@
+2026-10-27 22:41:38,962 | INFO | __main__ | CLI command=at arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'at', 'timestamp': '2017-06-15 08:00:00'}
+2026-10-27 22:41:39,267 | INFO | __main__ | CLI command=high arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'high', 'threshold': '5500', 'limit': '3'}
+2026-10-27 22:41:39,569 | INFO | __main__ | CLI command=compare arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'compare'}
+2026-10-27 22:41:39,878 | INFO | __main__ | CLI command=travel arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'travel', 'day_type': 'weekday', 'start': '7', 'end': '10'}
+2026-10-27 22:41:40,195 | INFO | __main__ | CLI command=at arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'at', 'timestamp': 'bad-date'}
+2026-10-27 22:41:40,250 | ERROR | __main__ | Cannot answer command: time data "bad-date" doesn't match format "%Y-%m-%d %H:%M:%S", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2026-11-22 14:33:49,200 | INFO | __main__ | CLI command=compare arguments={'data': 'data/processed/traffic_features.csv', 'log': 'app.log', 'debug': False, 'command': 'compare'}

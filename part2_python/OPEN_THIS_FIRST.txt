@@ -1,0 +1,10 @@
+ANACONDA AND JUPYTER
+
+1. Extract ALL files from this ZIP to a new folder.
+2. Launch Jupyter Notebook or JupyterLab from Anaconda Navigator.
+3. Browse to that extracted folder.
+4. Open Capstone_Part2.ipynb (at the top level).
+5. Choose the Python 3 kernel and Run All Cells.
+
+Keep the Python scripts and data folders beside the notebook; it imports them.
+No VS Code is required. The notebook already contains results and charts.

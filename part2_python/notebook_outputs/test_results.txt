@@ -1,0 +1,33 @@
+1730 rows affected: standardise weather_description
+17 rows affected: remove exact duplicate rows
+10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+4 rows imputed: temp month=1 median=264.2500
+6 rows imputed: temp month=2 median=264.1500
+1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+1 rows imputed: rain_1h month=7 median=0.0000
+1348 rows affected: propagate holiday marker within observed calendar date
+7612 rows affected: collapse repeated hours using severe weather selection
+test_cli_commands_and_errors (test_project.ProjectTests.test_cli_commands_and_errors) ... ok
+test_collapse_sensitivity (test_project.ProjectTests.test_collapse_sensitivity) ... 1730 rows affected: standardise weather_description
+17 rows affected: remove exact duplicate rows
+10 rows affected: temp outside [150, 350] or missing; mark for monthly median imputation
+4 rows imputed: temp month=1 median=264.2500
+6 rows imputed: temp month=2 median=264.1500
+1 rows affected: rain_1h outside [0, 9000] or missing; mark for monthly median imputation
+1 rows imputed: rain_1h month=7 median=0.0000
+1348 rows affected: propagate holiday marker within observed calendar date
+7612 rows affected: collapse repeated hours using first weather selection
+ok
+test_debug_hidden_in_normal_run (test_project.ProjectTests.test_debug_hidden_in_normal_run) ... ok
+test_hour_cycle_wraps (test_project.ProjectTests.test_hour_cycle_wraps) ... ok
+test_hourly_grain_and_counts (test_project.ProjectTests.test_hourly_grain_and_counts) ... ok
+test_invalid_values_and_missing_dates (test_project.ProjectTests.test_invalid_values_and_missing_dates) ... ok
+test_missing_file_logs_error_and_fails_gracefully (test_project.ProjectTests.test_missing_file_logs_error_and_fails_gracefully) ... ok
+test_scaling_fitted_only_on_reference_period (test_project.ProjectTests.test_scaling_fitted_only_on_reference_period) ... ok
+test_schema_rejects_before_cleaning (test_project.ProjectTests.test_schema_rejects_before_cleaning) ... ok
+test_targets_and_boundaries (test_project.ProjectTests.test_targets_and_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 8.561s
+
+OK
